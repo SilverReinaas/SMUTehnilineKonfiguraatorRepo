@@ -11,8 +11,8 @@ namespace Soft
     /// </summary>
     public partial class ReadData : Page
     {
-        public static List<Component> Locks { get; set; } = Data.Read.Technical.Locks.GetAll();
-        public static List<Component> Handednesses { get; set; } = Data.Read.Technical.Handednesses.GetAll();
+        public static List<Property> Locks { get; set; } = Data.Read.Technical.Locks.GetAll();
+        public static List<Property> Handednesses { get; set; } = Data.Read.Technical.Handednesses.GetAll();
         public ReadData()
         {
             InitializeComponent();

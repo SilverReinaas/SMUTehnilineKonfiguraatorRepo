@@ -7,14 +7,14 @@ namespace Data.Read.Technical
 {
     public static class Locks
     {
-        public static List<Component> GetAll()
+        public static List<Property> GetAll()
         {
-            return new List<Component>()
+            return new List<Property>()
             {
-                new Component(){Code="Assa565", Name="Assa 565"},
-                new Component(){Code="Assa560", Name="Assa 560"},
-                new Component(){Code="Abloy4190", Name="Abloy 4190"},
-                new Component(){Code="EL502", Name="EL 502"}
+                new Property(){Code="Assa565", Name="Assa 565"},
+                new Property(){Code="Assa560", Name="Assa 560"},
+                new Property(){Code="Abloy4190", Name="Abloy 4190"},
+                new Property(){Code="EL502", Name="EL 502"}
             };
         }
     }

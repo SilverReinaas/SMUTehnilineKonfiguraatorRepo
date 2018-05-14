@@ -14,10 +14,10 @@ namespace Data.Read.Orders
             /*
             return new List<Door>()
             {
-                new Door(){ProductCode="1001", CustomerCode="asd-1", DoorLeafWidth=100, Lock1=new Component(){Code="Assa565", Name="Assa 565"}, Lock2=new Component()},
-                new Door(){ProductCode="1002", CustomerCode="asd-2", DoorLeafWidth=100, Lock1=new Component(){Code="Assa560", Name="Assa 560"}, Lock2=new Component()},
-                new Door(){ProductCode="1003", CustomerCode="asd-3", DoorLeafWidth=100, Lock1=new Component(){Code="Assa565", Name="Assa 565"}, Lock2=new Component()},
-                new Door(){ProductCode="1004", CustomerCode="asd-4", DoorLeafWidth=100, Lock1=new Component(){Code="Assa565", Name="Assa 565"}, Lock2=new Component()}
+                new Door(){ProductCode="1001", CustomerCode="asd-1", DoorLeafWidth=100, Lock1=new Property(){Code="Assa565", Name="Assa 565"}, Lock2=new Property()},
+                new Door(){ProductCode="1002", CustomerCode="asd-2", DoorLeafWidth=100, Lock1=new Property(){Code="Assa560", Name="Assa 560"}, Lock2=new Property()},
+                new Door(){ProductCode="1003", CustomerCode="asd-3", DoorLeafWidth=100, Lock1=new Property(){Code="Assa565", Name="Assa 565"}, Lock2=new Property()},
+                new Door(){ProductCode="1004", CustomerCode="asd-4", DoorLeafWidth=100, Lock1=new Property(){Code="Assa565", Name="Assa 565"}, Lock2=new Property()}
             };
             */
 

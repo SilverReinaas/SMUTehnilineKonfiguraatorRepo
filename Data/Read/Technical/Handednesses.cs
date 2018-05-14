@@ -7,9 +7,9 @@ namespace Data.Read.Technical
 {
     public static class Handednesses
     {
-        public static List<Component> GetAll()
+        public static List<Property> GetAll()
         {
-            return new List<Component>() { new Component() { Code = "1", Name = "Parem" }, new Component() { Code = "2", Name = "Vasak" } };
+            return new List<Property>() { new Property() { Code = "1", Name = "Parem" }, new Property() { Code = "2", Name = "Vasak" } };
         }
     }
 }
