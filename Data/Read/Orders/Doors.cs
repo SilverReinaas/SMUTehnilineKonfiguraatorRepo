@@ -9,7 +9,7 @@ namespace Data.Read.Orders
 {
     public static class Doors
     {
-        public static List<Door> GetAllByProjId(string projId)
+        public static List<Door> GetAllByProjId(string workorderId)
         {
             /*
             return new List<Door>()
@@ -31,7 +31,7 @@ namespace Data.Read.Orders
                     var query = getAllDoorsSQL;
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@ProjId", projId);
+                        cmd.Parameters.AddWithValue("@workorderId", workorderId);
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -59,13 +59,18 @@ namespace Data.Read.Orders
             return result;
         }
 
-        static string getAllDoorsSQL = 
-            "SELECT InventDim.CONFIGID ,InventDim.INVENTSIZEID ,ProductData.* " +
-            "FROM[SALESLINE] " +
-            "JOIN[INVENTDIM] " +
+        private static string getAllDoorsSQL =
+            "SELECT WOHeader.[PROJID] ,WOHeader.[REPORTDATE] ,WOHeader.[DUEDATE] ,WOHeader.[NOTESPRODUCTION] ,WOHeader.[NOTESINSTALLATION] " +
+            ",WOLines.[LINENUM] ,InventDim.CONFIGID ,InventDim.INVENTSIZEID ,WOLines.[QTY] ,ProductData.* " +
+            "FROM[AX6R2_TAMMER_TEST2].[dbo].[ESTWORKORDERLINES] as WOLines " +
+            "JOIN[AX6R2_TAMMER_TEST2].[dbo].[ESTWORKORDERHEADER] as WOHeader " +
+            "ON WOHeader.WORKORDERID = WOLines.WORKORDERID AND WOHeader.DATAAREAID = WOLines.DATAAREAID AND WOHeader.PARTITION = WOLines.PARTITION " +
+            "JOIN[AX6R2_TAMMER_TEST2].[dbo].[SALESLINE] " +
+            "ON SalesLine.RECID = WOLines.SALESLINEREFRECID AND SalesLine.DATAAREAID = WOLines.DATAAREAID AND SalesLine.PARTITION = WOLines.PARTITION " +
+            "JOIN[AX6R2_TAMMER_TEST2].[dbo].[INVENTDIM] " +
             "ON InventDim.INVENTDIMID = SalesLine.INVENTDIMID AND InventDim.DATAAREAID = SalesLine.DATAAREAID AND InventDim.PARTITION = SalesLine.PARTITION " +
-            "JOIN[ESTPRODUCTDATA] as ProductData " +
+            "JOIN[AX6R2_TAMMER_TEST2].[dbo].[ESTPRODUCTDATA] as ProductData " +
             "ON ProductData.REFRECID = SalesLine.RECID AND ProductData.REFTABLEID = '359' AND ProductData.DATAAREAID = SalesLine.DATAAREAID AND ProductData.PARTITION = SalesLine.PARTITION " +
-            "WHERE[SALESLINE].PROJID = @ProjId ";
+            "WHERE WOLines.DATAAREAID = 'tta' AND WOLines.WORKORDERID = @workorderId";
     }
 }
