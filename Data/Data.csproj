@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read\Orders\Doors.cs" />
     <Compile Include="Read\Technical\ParameterData.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +55,8 @@
       <Name>Archetypes</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Read\Orders\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
