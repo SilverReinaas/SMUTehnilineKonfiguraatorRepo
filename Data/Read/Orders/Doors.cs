@@ -25,7 +25,7 @@ namespace Data.Read.Orders
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(Configuration.ConnectionString))
+                using (SqlConnection conn = new SqlConnection(Configuration.AxConnectionString))
                 {
                     conn.Open();
                     var query = getAllDoorsSQL;
@@ -40,7 +40,6 @@ namespace Data.Read.Orders
                                 {
                                     ProductCode = reader["CONFIGID"].ToString(),
                                     CustomerCode = reader["PRODUCTCUSTOMERDESCRIPTION"].ToString(),
-                                    Handedness = Read.Technical.Handednesses.GetAll().Find(x => x.Code == reader["Handedness"].ToString()),
                                     ActiveFrameWidth = float.Parse(reader["ACTIVESIDEWIDTH"].ToString()),
                                     PassiveFrameWidth = float.Parse(reader["PASSIVESIDEWIDTH"].ToString()),
                                     FrameHeight = float.Parse(reader["UNITHEIGHT"].ToString()),

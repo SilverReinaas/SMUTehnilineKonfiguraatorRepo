@@ -71,10 +71,6 @@
       <Project>{fcfadd80-3cd4-4078-8a65-fe25599ede3a}</Project>
       <Name>Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Soft\Soft.csproj">
-      <Project>{1684be7f-42e8-447d-9376-e47b0ecb7e30}</Project>
-      <Name>Soft</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Aids\" />
