@@ -11,7 +11,7 @@ namespace Data.Read.Technical
 {
     public class ParameterData
     {
-        public List<ParamsDescription> getAll()
+        public List<ParamsDescription> GetAllParamsDescriptions()
         {
             var result = new List<ParamsDescription>();
             try
@@ -30,7 +30,7 @@ namespace Data.Read.Technical
                                 {
                                     Id = reader["id"].ToString(),
                                     Name = reader["name"].ToString(),
-                                    Value = reader["description"].ToString()
+                                    Description = reader["description"].ToString()
                                 };
                                 result.Add(readParam);
                             }
